@@ -21,7 +21,6 @@ import android.content.Context;
 import android.provider.ContactsContract;
 
 import com.android.contacts.model.account.AccountWithDataSet;
-import com.android.contacts.model.account.GoogleAccountType;
 
 import java.util.Collections;
 import java.util.List;
@@ -32,12 +31,10 @@ import java.util.List;
 public final class DeviceLocalAccountLocator {
 
     private final Context mContext;
-    private final AccountManager mAccountManager;
     private final List<AccountWithDataSet> mLocalAccount;
 
-    public DeviceLocalAccountLocator(Context context, AccountManager accountManager) {
+    public DeviceLocalAccountLocator(Context context) {
         mContext = context;
-        mAccountManager = accountManager;
         mLocalAccount = Collections.singletonList(AccountWithDataSet.getLocalAccount(context));
     }
 
